@@ -14,19 +14,19 @@ By combining time-series forecasting, risk classification, and scenario simulati
 
 Global food prices fluctuate unpredictably due to:
 
-* Climate shocks (droughts, floods, heatwaves)
-* Currency instability and inflation
-* Global supply chain disruptions
-* Armed conflict and political instability
-* Fertilizer shortages and energy price fluctuations
+* Climate shocks (droughts, floods, heatwaves).
+* Currency instability and inflation.
+* Global supply chain disruptions.
+* Armed conflict and political instability.
+* Fertilizer shortages and energy price fluctuations.
 
 These shocks create **delayed and reactive responses** from governments and aid agencies, resulting in:
 
-* Hunger crises that could have been prevented
-* Loss of human life
-* Wasted resources due to poorly-timed interventions
-* Extreme price volatility affecting farmers and consumers
-* Increased poverty and malnutrition among vulnerable populations
+* Hunger crises that could have been prevented.
+* Loss of human life.
+* Wasted resources due to poorly-timed interventions.
+* Extreme price volatility affecting farmers and consumers.
+* Increased poverty and malnutrition among vulnerable populations.
 
 GLOHU aims to **predict these shocks ahead of time** and enable governments to act proactively.
 
