@@ -86,7 +86,7 @@ Continuous monitoring and predictive alerts for emerging hunger hotspots.
 
 ---
 
-## ML Approach**
+## ML Approach
 
 ### **1. Problem Formulation**
 
