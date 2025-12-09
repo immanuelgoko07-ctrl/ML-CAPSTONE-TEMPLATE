@@ -1,276 +1,280 @@
-# **GLOHU: Global Hunger Early Warning & Food Price Prediction System**
+#  **GLOHU – Global Hunger Utility**
 
-## **Project Overview**
-
-Global food insecurity is increasing due to climate change, economic instability, political conflict, and supply chain disruptions. Governments and humanitarian organizations often struggle to respond in time because **food price volatility is unpredictable and early warning systems are limited**.
-
-**GLOHU** (Global Hunger Unit) is a **machine learning–powered food price forecasting and early warning platform** designed to help governments, NGOs, and policymakers **anticipate future food price spikes**, identify regions at risk of hunger, and make timely interventions.
-
-By combining time-series forecasting, risk classification, and scenario simulation, GLOHU provides **actionable intelligence** for preventing hunger crises before they escalate.
+### *Machine Learning System for Predicting Global Food Prices*
 
 ---
 
-## **Problem Description**
+##  **1. Project Overview (Abstract)**
 
-Global food prices fluctuate unpredictably due to:
+**GLOHU (Global Hunger Utility)** is a machine-learning powered system designed to help **governments, NGOs, humanitarian agencies, farmers, and policy makers** forecast future food prices.
+Food price volatility is one of the major drivers of **hunger, poverty, supply chain instability**, and **poor policy planning**.
 
-* Climate shocks (droughts, floods, heatwaves).
-* Currency instability and inflation.
-* Global supply chain disruptions.
-* Armed conflict and political instability.
-* Fertilizer shortages and energy price fluctuations.
+This project uses **regression modeling** on the *World Food Programme (WFP) Food Prices Database* to build a predictive tool that can forecast prices of staple foods such as **maize**, **wheat**, **rice**, **sorghum**, and others across multiple regions.
 
-These shocks create **delayed and reactive responses** from governments and aid agencies, resulting in:
-
-* Hunger crises that could have been prevented.
-* Loss of human life.
-* Wasted resources due to poorly-timed interventions.
-* Extreme price volatility affecting farmers and consumers.
-* Increased poverty and malnutrition among vulnerable populations.
-
-GLOHU aims to **predict these shocks ahead of time** and enable governments to act proactively.
+The system is later deployed via **Streamlit**, making it accessible to anyone—even without technical skills.
 
 ---
 
-## **Impact of the Problem**
+##  **2. Problem Definition**
 
-### **Humanitarian Impact**
+### **What is the problem?**
 
-* Rising malnutrition and starvation
-* Increased risk of famine in low-income regions
-* Children, pregnant women, and elderly populations becoming extremely vulnerable
+Food prices fluctuate significantly due to economic shocks, climate events, conflicts, and supply chain disruptions. Many governments and organizations lack a reliable predictive system to anticipate spikes or declines.
 
-### **Economic Impact**
+### **Why is it important?**
 
-* Household purchasing power collapses
-* Farmers lose incomes due to unstable markets
-* Supply chain disruptions become more expensive
+Accurate predictions allow:
 
-### **Political Impact**
+* Early detection of hunger risks
+* Better budgeting for food relief
+* Smarter policy intervention
+* Market stability
+* Support for vulnerable households
 
-* Food riots and civil unrest
-* Government instability
-* Increased reliance on emergency food aid
+### **Who benefits?**
 
-### **Global Impact**
+* Governments
+* NGOs (WFP, FAO, USAID, UNICEF)
+* Farmers & Cooperatives
+* Economic planners & researchers
+* Humanitarian organizations
 
-* Hunger becomes transnational
-* Distorted international markets
-* Increased global poverty levels
+### **Type of ML Task**
 
----
-
-## **Project Goals and Objectives**
-
-GLOHU aims to provide **early, reliable, and actionable predictions** of food prices and hunger risk:
-
-### **1. Predict Future Food Prices**
-
-Use advanced time-series and ML models to forecast price trends for key staples (maize, wheat, rice, beans, etc.).
-
-### **2. Identify High-Risk Regions**
-
-Classify countries or regions likely to experience food shortages or price spikes.
-
-### **3. Simulate Future Scenarios**
-
-Test the impact of climate events, supply chain disruptions, or policy changes on future prices.
-
-### **4. Provide Actionable Insights for Governments**
-
-Support targeted interventions such as subsidies, food imports, fertilizer distribution, and social protection.
-
-### **5. Build a Global Early Warning System**
-
-Continuous monitoring and predictive alerts for emerging hunger hotspots.
+This is a **Regression** problem because the goal is to predict **continuous food price values**.
 
 ---
 
-## ML Approach
+## **3. Data Collection & Understanding**
 
-### **1. Problem Formulation**
+### **Dataset Source**
 
-GLOHU uses multiple ML tasks:
+* **World Food Programme (WFP) Food Prices Database**
+* Format: CSV/Excel
+* Contains historical prices for:
 
-* **Time-series forecasting:** Predict future food prices
-* **Classification:** Identify regions at “high hunger risk”
-* **Regression:** Model price drivers such as rainfall or inflation
-* **Scenario modeling:** Understand future shocks (e.g., drought effects)
+  * Commodities (maize, wheat, rice, beans, etc.)
+  * Markets
+  * Countries & regions
+  * Measurement units
+  * Dates (Month, Year)
+  * Additional metadata
 
----
+### **Exploratory Data Analysis (EDA)**
 
-### **2. Feature Engineering**
+Basic checks included:
 
-Key features include:
+* Data types (categorical + numerical)
+* Missing values
+* Duplicates
+* Outliers detection
+* Summary statistics (mean, min, max, standard deviation)
 
-* **Price Features:** historical prices, volatility, moving averages
-* **Climate Features:** rainfall, drought index, temperature anomalies
-* **Economic Features:** inflation, GDP trends, import/export data, currency strength
-* **Agricultural Features:** yield forecasts, fertilizer availability, land use
-* **Global Supply Chain Indicators:** shipping delays, commodity indexes
-* **Conflict Indicators:** severity scores, displacement numbers
+### **Visualizations Used**
 
----
-
-### **3. Model Selection**
-
-* **Time-Series Models:** ARIMA, SARIMA, Prophet, LSTM, GRU
-* **Regression Models:** Random Forest, XGBoost, Gradient Boosting
-* **Classification Models:** Logistic Regression, Gradient Boosting, Random Forest
-* **Hybrid Deep Learning Models:** seq2seq, encoder–decoder architectures
-* **Ensemble Models:** combine multiple algorithms for robust accuracy
-
----
-
-### **4. Model Training & Validation**
-
-GLOHU uses:
-
-* **Cross-validation** for time-series data
-* **Sliding windows** for long-term forecasting
-* **Metrics:**
-
-  * MAE, RMSE (forecasting performance)
-  * Accuracy, F1-score (risk classification)
-  * AUC-ROC (hunger risk detection)
-* **Hyperparameter tuning:** grid search or Bayesian optimization
+* Histograms of prices
+* Bar charts for top commodities
+* Correlation heatmap
+* Box plots to detect outliers
+* Time-series trends for selected markets
 
 ---
 
-### **5. Decision Support & Deployment**
+##  **4. Data Preprocessing**
 
-The system outputs:
+### Steps performed:
 
-* **Food price forecasts (daily, weekly, monthly)**
-* **Hunger risk classifications**
-* **Scenario-based simulations (climate, economic, supply chain)**
-* **Interactive dashboards**
-* **Automated early warning alerts**
+✔ Drop missing or invalid price entries
+✔ Handle missing categorical values
+✔ One-Hot Encoding for:
 
-Deployment may use:
+* Country
+* Region
+* Market
+* Commodity
 
-* Cloud APIs
-* Web dashboards
-* Mobile-friendly policy tools
+✔ Convert dates into **mp_month** and **mp_year**
+✔ Normalization for numeric features (if needed)
+✔ Convert to train/test splits (75% train, 25% test)
 
----
+### Handling imbalance
 
-## **System Architecture (Conceptual)**
-
-1. **Data Input Layer**
-
-   * Historical food prices
-   * Climate and weather data
-   * Macroeconomic indicators
-   * Global commodity indexes
-   * Conflict and migration data
-
-2. **Preprocessing & Feature Engineering**
-
-   * Cleaning, normalization, trend extraction
-   * Lag features and rolling statistics
-   * Climate anomaly detection
-
-3. **ML Core**
-
-   * Time-series forecasting models
-   * Risk classification models
-   * Scenario simulation models
-
-4. **Decision Engine**
-
-   * Price spike alerts
-   * Hunger risk scores
-   * Intervention recommendations
-
-5. **Visualization Layer**
-
-   * Dashboards with maps, graphs, risk heatmaps
-
-6. **Monitoring & Feedback Loop**
-
-   * Retrain models periodically
-   * Update predictions with new data
-   * Evaluate accuracy and refine parameters
+Not applicable (regression task).
 
 ---
 
-## **Project Roadmap**
+##  **5. Modeling Approach**
 
-### **Phase 1 — Research & Problem Definition**
+Multiple models were tested:
 
-* Identify staple foods
-* Define forecast horizons
-* Map key global hunger drivers
+### **Baseline Models**
 
-### **Phase 2 — Model Development**
+* Linear Regression
+* Lasso Regression
 
-* Build forecasting models
-* Build hunger risk classifiers
-* Engineer climate and economic features
+### **Advanced Models**
 
-### **Phase 3 — Scenario Simulator**
+* Random Forest Regressor
+* Gradient Boosting Regressor
+* XGBoost (optional)
 
-* Integrate climate shock simulations
-* Model supply chain disruption scenarios
+### **Pipeline Approach**
 
-### **Phase 4 — Dashboard Development**
+A Scikit-Learn pipeline was created with:
 
-* Create forecasting dashboards
-* Build risk heatmaps
-* Add early warning alerts
+* Preprocessing (OneHotEncoder + numeric passthrough)
+* Model (regressor)
 
-### **Phase 5 — Pilot Program**
+### **Hyperparameter Tuning**
 
-* Test model in selected regions/countries
-* Validate predictions with government agencies
+Performed using:
 
-### **Phase 6 — Scale to Global Platform**
+* **GridSearchCV**
+* **RandomizedSearchCV**
+* **HalvingGridSearchCV** for speed optimization
 
-* Integrate more countries
-* Add more crops and price indices
-* Improve accuracy and model resilience
+### **Why the final model was chosen**
 
----
+The chosen model (Random Forest / Gradient Boosting / Lasso—depending on results) performed best in:
 
-## **Expected Outcomes and Impact**
-
-### **Reduce Hunger Through Early Warning**
-
-Governments can intervene months before crises occur.
-
-### **Stabilize Food Markets**
-
-Better import planning, subsidy timing, and supply chain management.
-
-### **Enhance Disaster Preparedness**
-
-Faster response to droughts, floods, and wars.
-
-### **Support Strategic Decision-Making**
-
-Policy decisions based on predictive intelligence, not guesswork.
+* RMSE
+* MAE
+* R²
+* Cross-validation stability
+* Speed
+* Generalization
 
 ---
 
-## **Ethical & Legal Considerations**
+##  **6. Evaluation**
 
-* Ensure transparency of models
-* Prevent bias against low-income regions
-* Protect sensitive economic data
-* Provide uncertainty ranges to avoid false certainty
-* Avoid politically harmful misinterpretation of results
+### **Metrics Used**
+
+Because this is a regression problem:
+
+* **RMSE** – Root Mean Square Error
+* **MAE** – Mean Absolute Error
+* **R² Score** – Variance explained by the model
+
+### **Validation Tools**
+
+✔ Cross validation (KFold)
+✔ Validation Curves
+✔ Learning Curves
+✔ Feature Importance plots
+
+### **Results Summary**
+
+(The actual numbers will depend on your model training.)
+
+Typical insights:
+
+* Commodity type and month-year have strong predictive power
+* Regional effects significantly influence food prices
+* Price trends are more predictable for staple grains (maize, wheat, rice)
 
 ---
 
-## **Contributing**
+##  **7. Error Analysis**
 
-We welcome contributions from:
+### **Observed Errors**
 
-* ML engineers
-* Agricultural economists
-* Climate scientists
-* Humanitarian policy experts
-* GIS and data visualization experts
+* Higher errors on rare commodities (low data volume)
+* Some markets have inconsistent or noisy reporting
+* Sudden price spikes (e.g., drought, war, inflation) are hard to predict
+* Seasonality not always captured perfectly
+
+### **Possible Causes**
+
+* Insufficient historical data in some countries
+* Data inconsistencies in humanitarian reporting
+* Global events not captured in dataset (floods, conflicts)
+* Lack of external features (rainfall, CPI inflation, fuel prices)
+
+### **Improvements Suggested**
+
+* Add climate, economic, or conflict datasets
+* Collect more samples for rare commodities
+* Try LSTM or Prophet for time-series modeling
+* Improve feature engineering (lags, rolling averages)
+
+---
+
+## **8. Model Interpretation**
+
+### **Feature Importance**
+
+Tree-based models revealed:
+
+* **Commodity Name**
+* **Market**
+* **Region**
+* **Month & Year (seasonality)**
+  are the strongest determinants of price.
+
+Interpretation example:
+
+> “Wheat prices rise sharply in months following drought season in East Africa.”
+> “Urban markets show higher price volatility than rural markets.”
+
+---
+
+##  **9. Deployment**
+
+The model is deployed using:
+
+### ✔ **Streamlit Web Application**
+
+Features:
+
+* User selects commodity, country, region, month, and year
+* Model predicts expected food price
+* Visual dashboard for:
+
+  * Price trends
+  * Commodity comparisons
+  * Confidence ranges
+
+### Alternative deployment:
+
+* Jupyter Notebook for demonstration
+* API integration (FastAPI/Flask) for advanced users
+
+---
+
+##  **10. Project Structure / Report Outline**
+
+Your report or notebook should have:
+
+1. **Title & Abstract**
+2. **Problem Statement**
+3. **Data Collection & Understanding**
+4. **Exploratory Data Analysis (EDA)**
+5. **Data Preprocessing**
+6. **Modeling Approach**
+7. **Hyperparameter Tuning**
+8. **Results & Evaluation**
+9. **Error Analysis**
+10. **Conclusion & Future Work**
+11. **References**
+12. **Appendix (plots, additional tests)**
+
+---
+
+#  **Conclusion**
+
+GLOHU successfully demonstrates how machine learning can help solve one of the biggest global challenges—food insecurity. By predicting future food prices, the model becomes a powerful tool for:
+
+* Early warning systems
+* Budget planning
+* Market stabilization
+* Policy decision-making
+* Humanitarian response
+
+Future upgrades include:
+
+* Adding time-series deep learning models
+* Integrating external economic indicators
+* Supporting more countries and markets
 
 
