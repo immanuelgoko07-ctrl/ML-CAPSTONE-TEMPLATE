@@ -78,18 +78,22 @@ Basic checks included:
 
 ### Steps performed:
 
-✔ Drop missing or invalid price entries
-✔ Handle missing categorical values
-✔ One-Hot Encoding for:
+ Drop missing or invalid price entries
+
+ Handle missing categorical values
+
+ One-Hot Encoding for:
 
 * Country
 * Region
 * Market
 * Commodity
 
-✔ Convert dates into **mp_month** and **mp_year**
-✔ Normalization for numeric features (if needed)
-✔ Convert to train/test splits (75% train, 25% test)
+ Convert dates into **mp_month** and **mp_year**
+
+ Normalization for numeric features (if needed)
+
+ Convert to train/test splits (80% train, 20% test)
 
 ### Handling imbalance
 
