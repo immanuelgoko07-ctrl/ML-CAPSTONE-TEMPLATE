@@ -156,14 +156,16 @@ Because this is a regression problem:
 
 ### **Validation Tools**
 
-✔ Cross validation (KFold)
-✔ Validation Curves
-✔ Learning Curves
-✔ Feature Importance plots
+Cross validation (KFold)
+
+Validation Curves
+
+Learning Curves
+
+Feature Importance plots
 
 ### **Results Summary**
 
-(The actual numbers will depend on your model training.)
 
 Typical insights:
 
