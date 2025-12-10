@@ -11,10 +11,6 @@ Food price volatility is one of the major drivers of **hunger, poverty, supply c
 
 This project uses **regression modeling** on the *World Food Programme (WFP) Food Prices Database* to build a predictive tool that can forecast prices of staple foods such as **maize**, **wheat**, **rice**, **sorghum**, and others across multiple regions.
 
-The system is later deployed via **Streamlit**, making it accessible to anyone—even without technical skills.
-
----
-
 ##  **2. Problem Definition**
 
 ### **What is the problem?**
