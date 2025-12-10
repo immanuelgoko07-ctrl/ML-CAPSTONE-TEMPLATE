@@ -63,7 +63,6 @@ Basic checks included:
 * Data types (categorical + numerical)
 * Missing values
 * Duplicates
-* Outliers detection
 * Summary statistics (mean, min, max, standard deviation)
 
 ### **Visualizations Used**
@@ -71,7 +70,6 @@ Basic checks included:
 * Histograms of prices
 * Bar charts for top commodities
 * Correlation heatmap
-* Box plots to detect outliers
 * Time-series trends for selected markets
 
 ---
