@@ -275,9 +275,6 @@ Features:
 ### Alternative deployment:
 
 * Jupyter Notebook for demonstration
-* API integration (FastAPI/Flask) for advanced users
-
----
 
 ##  **10. Project Structure / Report Outline**
 
