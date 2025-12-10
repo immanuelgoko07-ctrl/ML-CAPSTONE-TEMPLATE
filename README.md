@@ -178,6 +178,42 @@ Typical insights:
 
 ##  **7. Error Analysis**
 
+Confusion Matrix Analysis
+
+To evaluate the classification performance of the model, a confusion matrix was generated to visualize how well each food category was predicted. Although the primary task of the project is regression (predicting food prices), the confusion matrix was used during exploratory modeling to understand misclassification patterns when grouping prices into categories such as Low, Medium, and High.
+
+The confusion matrix revealed the following key insights:
+
+Most Misclassified Class:
+The Medium price category experienced the highest number of misclassifications. This suggests that its boundaries overlap significantly with both Low and High price ranges, making it harder for the model to distinguish.
+
+Underprediction Patterns:
+A notable number of High price observations were misclassified as Medium. This indicates that the model tends to underestimate extreme price spikes, possibly due to limited training examples of very high prices or high variance in the underlying economic factors.
+
+Overprediction Patterns:
+Some Low price samples were misclassified as Medium. This may happen if the dataset contains noisy or unstable market conditions where prices fluctuate irregularly within the same period.
+
+Class Balance Impact:
+The distribution of classes was moderately imbalanced, with Medium prices being the most common. This imbalance influenced the model to favor the dominant class, resulting in higher prediction accuracy for Medium but lower precision for Low and High.
+
+Key Observations:
+
+Medium ↔ High confusion was the most frequent.
+
+Low ↔ Medium confusion occurred but was less severe.
+
+Low ↔ High confusion was rare, showing the model can distinguish extreme cases.
+
+Implications
+
+The confusion matrix indicates that the model performs reasonably well in separating Low and High price categories, but it struggles with the intermediate Medium class. This suggests a need for:
+
+More training samples in the Low and High categories.
+
+Better feature engineering to capture factors that differentiate mid-range prices.
+
+Potential use of techniques like SMOTE or class-weight adjustments to reduce bias toward the majority class.
+
 ### **Observed Errors**
 
 * Higher errors on rare commodities (low data volume)
