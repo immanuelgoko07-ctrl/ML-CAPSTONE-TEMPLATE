@@ -262,7 +262,7 @@ Interpretations :
 
 The model is deployed using:
 
-### ✔ **Streamlit Web Application**
+###  **Lovable Web Application**
 
 Features:
 
