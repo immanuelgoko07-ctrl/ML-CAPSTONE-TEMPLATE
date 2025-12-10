@@ -160,9 +160,9 @@ Cross validation (KFold)
 
 Validation Curves
 
-Learning Curves
+Learning curves
 
-Feature Importance plots
+Feature Important plots(showing relevant plots to my project).
 
 ### **Results Summary**
 
@@ -172,6 +172,7 @@ Typical insights:
 * Commodity type and month-year have strong predictive power
 * Regional effects significantly influence food prices
 * Price trends are more predictable for staple grains (maize, wheat, rice)
+* Model does not suffers from high variance or high bias.
 
 ---
 
