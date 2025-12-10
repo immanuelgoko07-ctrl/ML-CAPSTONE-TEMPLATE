@@ -114,7 +114,7 @@ Multiple models were tested:
 
 * Random Forest Regressor
 * Gradient Boosting Regressor
-* XGBoost (optional)
+* XGBoost
 
 ### **Pipeline Approach**
 
@@ -133,7 +133,7 @@ Performed using:
 
 ### **Why the final model was chosen**
 
-The chosen model (Random Forest / Gradient Boosting / Lasso—depending on results) performed best in:
+The chosen model was Gradient Boosting because it performed best in:
 
 * RMSE
 * MAE
