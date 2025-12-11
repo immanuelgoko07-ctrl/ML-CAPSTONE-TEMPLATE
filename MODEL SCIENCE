@@ -1,0 +1,231 @@
+# **Model Science Behind GLOHU: The Predictive Engine Fighting Global Hunger**
+
+The GLOHU project is built on a structured and scientific modeling pipeline designed to forecast global food prices with high reliability. Below is the full breakdown of the **model science**, detailing the theory, reasoning, and analytical backbone behind your system.
+
+---
+
+## **1. Theoretical Framework**
+
+The project is grounded in a combination of **economic theory**, **time-series forecasting**, and **machine learning prediction**.
+
+### ✔ **Economic Theory**
+
+Food prices are driven by:
+
+* Supply shocks (weather, climate change, pests)
+* Demand fluctuations (population growth, income changes)
+* Global market signals (oil prices, exchange rates, trade policies)
+* Seasonal patterns (harvest cycles)
+
+These factors generate **non-linear**, **dynamic**, and sometimes **chaotic** behavior—making machine learning ideal for capturing hidden patterns.
+
+---
+
+## **2. Data Generating Process (DGP)**
+
+GLOHU assumes that food price movements follow a mixture of:
+
+### **(a) Trend Component**
+
+Long-term upward or downward movement driven by:
+
+* Inflation
+* Technology improvements
+* Structural changes in supply chains
+
+### **(b) Seasonal Component**
+
+Repeating patterns caused by:
+
+* Harvest periods
+* Rainfall cycles
+* Festivals and holidays
+
+### **(c) Cyclical Component**
+
+Medium-term fluctuations based on:
+
+* Global commodity cycles
+* Policy changes
+* Market sentiment
+
+### **(d) Irregular Component**
+
+Unexpected shocks:
+
+* Wars
+* Pandemics
+* Natural disasters
+
+This decomposition allows the model to isolate **signal from noise**.
+
+---
+
+## **3. Feature Engineering Science**
+
+Your model transforms raw data into high-value numerical features.
+
+### ✨ **Time-Based Features**
+
+* Month, Year, Quarter
+* Lag values (t−1, t−3, t−12)
+* Rolling averages (3, 6, 12 months)
+* Price volatility indicators
+
+### ✨ **Economic Features**
+
+* CPI
+* Exchange rate
+* Oil prices
+* Interest rate
+* Food production index
+
+### ✨ **Climate Features**
+
+* Rainfall index
+* Temperature anomaly
+* Drought severity
+
+These features help the model understand both **local dynamics** and **global forces**.
+
+---
+
+## **4. Modeling Science**
+
+GLOHU uses a **hybrid modeling framework** to maximize accuracy:
+
+---
+
+### **A. Classical Models**
+
+These capture trend + seasonality very well:
+
+#### **1. ARIMA / SARIMA**
+
+Good for stable, low-variance data
+Formula:
+**Yₜ = c + ϕ₁Yₜ₋₁ + … + θ₁ϵₜ₋₁ + … + seasonal terms**
+
+#### **2. Holt-Winters (Exponential Smoothing)**
+
+Models level, trend, and seasonality.
+
+These classical models create a **baseline forecast**.
+
+---
+
+### **B. Machine Learning Models**
+
+These capture non-linear behavior.
+
+#### **1. Random Forest Regressor**
+
+Captures complex interactions between:
+
+* climate
+* economics
+* market pressures
+
+#### **2. Gradient Boosting (XGBoost / LightGBM)**
+
+Learns from errors sequentially
+Strong on tabular data with mixed feature types.
+
+#### **3. Linear Regression**
+
+Used for interpretability
+Shows which factors influence price the most.
+
+---
+
+### **C. Deep Learning Models**
+
+Used for sequence prediction.
+
+#### **1. LSTM (Long Short-Term Memory Networks)**
+
+Captures long-term dependencies in price history.
+
+#### **2. GRU (Gated Recurrent Unit)**
+
+Lightweight and fast.
+Useful when data is small or noisy.
+
+These models form the **core predictive engine**.
+
+---
+
+## **5. Ensemble Science**
+
+To increase robustness, GLOHU combines predictions using:
+
+### ✔ **Weighted Averaging**
+
+Higher weight = model with lower validation error.
+
+### ✔ **Stacking**
+
+Outputs of base models become input to a meta-model.
+
+This produces a **balanced**, **stable**, and **high-accuracy** long-term forecast.
+
+---
+
+## **6. Evaluation Science**
+
+### **Metrics Used**
+
+* **RMSE** → measures average prediction error
+* **MAE** → measures real-world error in currency terms
+* **MAPE** → shows percentage error
+* **R² Score** → how much variance the model explains
+
+### **Why These?**
+
+Because food prices are sensitive, the model must minimize both:
+
+* absolute error
+* proportional error
+
+---
+
+## **7. Error Analysis Science**
+
+The project analyzes errors by studying:
+
+### ✔ **Residual Plots**
+
+Checks randomness of model errors.
+
+### ✔ **Prediction Errors by Month**
+
+To see if seasonality is miscaptured.
+
+### ✔ **Feature Sensitivity**
+
+Shows which variables distort predictions.
+
+This helps improve the modeling pipeline.
+
+---
+
+## **8. Model Deployment Science**
+
+The predictive engine is deployed through:
+
+### ⭐ Streamlit Web App
+
+* Real-time predictions
+* Dynamic charts
+* Interactive analysis
+
+### ⭐ Scheduled Model Retraining
+
+The model automatically adapts to:
+
+* new climate patterns
+* new global shocks
+* new policy changes
+
+This ensures predictions remain reliable.
+
