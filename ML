@@ -3,3 +3,4 @@ https://hunger-guard-ai.lovable.app
 https://muse-data-wiz.lovable.app
 https://glohu-food-sense.lovable.app
 https://glohu-price-sense.lovable.app
+https://glohu-food-forecast.lovable.app
